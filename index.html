@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Website</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .question {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .options {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .option {
+    margin-bottom: 5px;
+  }
+
+  label {
+    display: block;
+    cursor: pointer;
+  }
+
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz Time!</h1>
+  <div class="question">
+    <p>Where is SJCIT college located?</p>
+  </div>
+  <ul class="options">
+    <li class="option">
+      <label>
+        <input type="radio" name="answer" value="a"> a) Bengaluru
+      </label>
+    </li>
+    <li class="option">
+      <label>
+        <input type="radio" name="answer" value="b"> b) Chikkaballapur
+      </label>
+    </li>
+    <li class="option">
+      <label>
+        <input type="radio" name="answer" value="c"> c) Mysuru
+      </label>
+    </li>
+    <li class="option">
+      <label>
+        <input type="radio" name="answer" value="d"> d) Kolar
+      </label>
+    </li>
+  </ul>
+  <button onclick="checkAnswer()">Submit</button>
+</div>
+
+<script>
+  function checkAnswer() {
+    const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+    if (selectedAnswer) {
+      const answerValue = selectedAnswer.value;
+      if (answerValue === "b") {
+        alert("Correct!");
+      } else {
+        alert("Incorrect. The correct answer is Chikkaballapur.");
+      }
+    } else {
+      alert("Please select an answer.");
+    }
+  }
+</script>
+</body>
+</html>
